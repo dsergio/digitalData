@@ -387,55 +387,23 @@ javascript: (function() {
 	};
 	
 	window.digitalData.trackNavClick = function(e, d1, d2) {
-		window.digitalData.linkTrackVars.push("eVar6");
-		window.digitalData.linkTrackEvents.push("event6");
-		window.digitalData.eVar6 = e.category.primaryCategory + "|" + window.digitalData.eventSubcategoryToString(e);
-		if (e.effect != null && e.effect != undefined) {
-			window.digitalData.eVar6 = window.digitalData.eVar6 + ":" + e.effect;
-		}
+		// TBD
 	};
 	
 	window.digitalData.trackPromoClick = function(e, d1, d2) {
-		window.digitalData.linkTrackVars.push("eVar7");
-		window.digitalData.linkTrackEvents.push("event7");
-		window.digitalData.eVar7 = e.category.primaryCategory + "|" + window.digitalData.eventSubcategoryToString(e);
-		if (e.effect != null && e.effect != undefined) {
-			window.digitalData.eVar7 = window.digitalData.eVar7 + ":" + e.effect;
-		}
+		// TBD
 	};
 	
 	window.digitalData.trackSearchInit = function(e, d1, d2) {
-		window.digitalData.linkTrackVars.push("eVar8");
-		window.digitalData.linkTrackEvents.push("event8");
-		window.digitalData.eVar8 = e.attributes.search.searchQuery;
+		// TBD
 	};
 	
 	window.digitalData.trackCartAdd = function(e, d1, d2) {
-		window.digitalData.linkTrackVars.push("products");
-		window.digitalData.linkTrackEvents.push("event11");
-		if(typeof e.attributes != "undefined") {
-			if(typeof e.attributes.items != "undefined") {
-				var products = []; 
-				for(var i = 0; i < e.attributes.items.length; i++) {
-					products.push( ";" + e.attributes.items[i].sku + ";;;;eVar10=" + e.attributes.items[i].productID );
-				}
-				window.digitalData.productString = products.join(); 
-			}
-		}
+		// TBD
 	};
 	
 	window.digitalData.trackCheckout = function(e, d1, d2) {
-		window.digitalData.linkTrackVars.push("products");
-		window.digitalData.linkTrackEvents.push("event12");
-		if(typeof e.attributes != "undefined") {
-			if(typeof e.attributes.items != "undefined") {
-				var products = []; 
-				for(var i = 0; i < e.attributes.items.length; i++) {
-					products.push( ";" + e.attributes.items[i].sku + ";;;;eVar10=" + e.attributes.items[i].productID );
-				}
-				window.digitalData.productString = products.join(); 
-			}
-		}
+		// TBD
 	};
 	
 })();

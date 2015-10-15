@@ -331,46 +331,20 @@ javascript: (function() {
 		return accessCategory_;
 	};
 
-	window.digitalData.trackEvent = function(e, d1, d2, f) { 
-		window.digitalData.linkTrackVars = ["events"];
-		window.digitalData.linkTrackEvents = [""];
-		var events = [];
-		events.push(e);
-		for(var i = 0; i < events.length; i++) {
-			if(typeof e.eventAction == "string") {
-				switch (e.eventAction) {
-					case "click" : 
-						window.digitalData.trackClick(events[i], d1, d2); 
-						break;
-					case "addToCart" : 
-						window.digitalData.trackCartAdd(events[i], d1, d2); 
-						break;
-					case "searchInit" : 
-						window.digitalData.trackSearchInit(events[i], d1, d2); 
-						break;
-					case "checkout" : 
-						window.digitalData.trackCheckout(events[i], d1, d2); 
-						break;
-					default :
-						try {
-							eval(f(events[i]));
-						} catch (e) {
-							;
-						}
-						break;
-				}
-			}
-		}		 
-	};
-	
-	window.digitalData.trackClick = function(e, d1, d2) {
-		if(typeof e.type == "string") {
-			switch (e.type) {
-				case "navigation" :
-					window.digitalData.trackNavClick(e, d1, d2); 
+	window.digitalData.trackEvent = function(e) { 
+		if(typeof e.eventAction == "string") {
+			switch (e.eventAction) {
+				case "click" : 
+					window.digitalData.trackClick(e); 
 					break;
-				case "promo" :
-					window.digitalData.trackPromoClick(e, d1, d2); 
+				case "addToCart" : 
+					window.digitalData.trackCartAdd(e); 
+					break;
+				case "searchInit" : 
+					window.digitalData.trackSearchInit(e); 
+					break;
+				case "checkout" : 
+					window.digitalData.trackCheckout(e); 
 					break;
 				default :
 					break;
@@ -378,31 +352,38 @@ javascript: (function() {
 		}
 	};
 	
-	window.digitalData.eventSubcategoryToString  = function(e) {
-		var sc = "";
-		if (e.category.subCategory != null && e.category.subCategory != undefined) {
-			sc = e.category.subCategory.join(":");
+	window.digitalData.trackClick = function(e) {
+		if(typeof e.type == "string") {
+			switch (e.type) {
+				case "navigation" :
+					window.digitalData.trackNavClick(e); 
+					break;
+				case "promo" :
+					window.digitalData.trackPromoClick(e); 
+					break;
+				default :
+					break;
+			}
 		}
-		return sc; 
 	};
 	
-	window.digitalData.trackNavClick = function(e, d1, d2) {
+	window.digitalData.trackNavClick = function(e) {
 		// TBD
 	};
 	
-	window.digitalData.trackPromoClick = function(e, d1, d2) {
+	window.digitalData.trackPromoClick = function(e) {
 		// TBD
 	};
 	
-	window.digitalData.trackSearchInit = function(e, d1, d2) {
+	window.digitalData.trackSearchInit = function(e) {
 		// TBD
 	};
 	
-	window.digitalData.trackCartAdd = function(e, d1, d2) {
+	window.digitalData.trackCartAdd = function(e) {
 		// TBD
 	};
 	
-	window.digitalData.trackCheckout = function(e, d1, d2) {
+	window.digitalData.trackCheckout = function(e) {
 		// TBD
 	};
 	

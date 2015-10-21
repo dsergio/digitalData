@@ -5,6 +5,9 @@ javascript: (function() {
 	window.digitalData = {};
 	window.digitalData.page = {};
 	window.digitalData.page.pageInfo = {};
+	window.digitalData.search = {};
+	window.digitalData.checkout = {};
+	window.digitalData.confirmation = {};
 	window.digitalData.version = "1.0";
 	//
 	//
@@ -41,7 +44,6 @@ javascript: (function() {
 		industryCodes : null,
 		publisher : null
 	};
-
 	//
 	//
 	//
@@ -54,10 +56,39 @@ javascript: (function() {
 	window.digitalData.search = {
 		dropoffDate : null,
 		dropoffLocationId : null,
-		
+		dropoffTime : null,
+		pickupDate : null,
+		pickupLocationId : null,
+		pickupTime : null,
+		rentalDuration : null,
+		pickupTermSearched : null,
+		dropoffTermSearched : null
 	};
-
-
-	
+	//
+	//
+	//
+	//
+	// **digitalData.checkout:**
+	// Describes details about the checkout.
+	//
+	//
+	// 
+	window.digitalData.checkout = {
+		supplier_id : null
+	};
+	//
+	//
+	//
+	//
+	// **digitalData.confirmation:**
+	// Describes details about the confirmation.
+	//
+	//
+	// 
+	window.digitalData.confirmation = {
+		supplier_id : null,
+		gross_booking_amount : null,
+		tresa_confirmation_id : null
+	};
 })();
  

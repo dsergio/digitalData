@@ -68,13 +68,32 @@ javascript: (function() {
 	//
 	//
 	//
+	// **digitalData.result:**
+	// Describes details about the search result.
+	//
+	//
+	// 
+	window.digitalData.result = {
+		numberOfCarsReturned : null,
+		lowestRateReturned : null,
+		highestRateReturned : null,
+		search_trigger_location : null,
+		piaQueryTime: null
+	};
+	//
+	//
+	//
+	//
 	// **digitalData.checkout:**
 	// Describes details about the checkout.
 	//
 	//
 	// 
 	window.digitalData.checkout = {
-		supplier_id : null
+		supplier_id : null,
+		car_acriss_code : null,
+		car_model : null,
+		product_id : null
 	};
 	//
 	//
@@ -88,7 +107,14 @@ javascript: (function() {
 	window.digitalData.confirmation = {
 		supplier_id : null,
 		gross_booking_amount : null,
-		tresa_confirmation_id : null
+		tresa_confirmation_id : null,
+		car_acriss_sipp_code : null,
+		booking_status : null,
+		payment_model : null,
+		booking_date : null,
+		booking_time : null,
+		supplier_confirmation_id : null,
+		sales_channel : null
 	};
 })();
  
